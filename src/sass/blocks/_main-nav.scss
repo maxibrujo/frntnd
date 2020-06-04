@@ -1,62 +1,71 @@
 .main-nav {
+    &__wrapper {
+        position: relative;
+    }
 
-&__wrapper {
-    position: relative;
-}
-
-&__toggle {
-    position: absolute;
-    display: block;
-    width: 65px;
-    height: 65px;
-    right: 0;
-    top: -66px;
-    cursor: pointer;
+    &__toggle {
+        position: absolute;
+        display: block;
+        width: 65px;
+        height: 65px;
+        right: 0;
+        top: -66px;
+        cursor: pointer;
         border: none;
         background-color: #fff;
-        
-}
+    }
 
-&__toggle::before,
-&__toggle::after {
-    position: absolute;
-    content: "";
-    background-color: #000;
-}
+    &__toggle::before,
+    &__toggle::after {
+        position: absolute;
+        content: "";
+        background-color: #000;
+    }
 
-&__list {
-    width: 100%;
-    list-style: none;
-    text-align: center;
-}
+    &__list {
+        width: 100%;
+        list-style: none;
+        text-align: center;
+    }
 
-&--closed &__toggle::before {
+    &--closed &__list {
+        display: none;
+    }
+
+    &--nojs &__list {
+        position: static;
+    }
+
+    &--nojs &__toggle {
+        display: none;
+    }
+
+    &--closed &__toggle::before {
         width: 24px;
         height: 2px;
         left: 21px;
         top: 23px;
         box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
-}
-
-&--opened &__toggle {
-    &::before,
-    &:after {
-        top: 31px;
-        right: 20px;
-        width: 24px;
-        height: 2px;
     }
 
-    &::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-    }
+    &--opened &__toggle {
+        &::before,
+        &:after {
+            top: 31px;
+            right: 20px;
+            width: 24px;
+            height: 2px;
+        }
 
-    &::after {
-        transform: rotate(-45deg);
-    }
-}
+        &::before {
+            transform: rotate(45deg);
+            box-shadow: none;
+        }
 
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
 }
 // .main-nav {
 //     position: relative;
@@ -154,7 +163,7 @@
 //             padding-left: 70px;
 //             text-align: center;
 //         }
-    
+
 //     .main-nav--closed .user-list__item {
 //         display: none;
 //     }
@@ -232,4 +241,3 @@
 //         width: 960px;
 //     }
 // }
-
