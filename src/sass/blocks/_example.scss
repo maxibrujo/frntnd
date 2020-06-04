@@ -1,0 +1,104 @@
+.example {
+    @include container();
+    background-color: $cat_grey;
+    padding-top: 30px;
+    padding-bottom: 35px;
+
+    &__header {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        @include list_reset();
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 122px;
+        height: 54px;
+        border: 1px solid #cdcdcd;
+        border-radius: 3px;
+    }
+
+    &__value {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    &__unit {
+        position: absolute;
+        width: 68px;
+        bottom: -15px;
+        left: 17px;
+        padding: 0 10px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        background-color: $cat_grey;
+    }
+
+    &__container {
+        margin: 0 20px;
+    }
+
+    &__description {
+        @include paragraph_text();
+    }
+
+    &__price {
+        @include upper14_text();
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    &__photo-container {
+        position: relative;
+    }
+
+    &__photo--before {
+        position: absolute;
+        top: 7px;
+        width: 160px;
+        overflow: hidden;
+    }
+
+    &__photo--after {
+        margin-left: 42px;
+    }
+
+    &__range {
+        display: flex;
+        align-items: center;
+        width: 197px;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 35px;
+
+        p {
+            @include upper16_text();
+        }
+    }
+
+    &__range-control {
+        appearance: none;
+        width: 82px;
+        height: 12px;
+        background-color: #fff;
+        border: 1px solid #cdcdcd;
+        border-radius: 6px;
+    }
+}

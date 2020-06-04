@@ -1,0 +1,36 @@
+.page-header {
+    @include container();
+    display: flex;
+    flex-direction: column;
+
+    &__logo,
+    &__brand {
+        display: block;
+        margin: auto;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            opacity: 0.6;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        height: 65px;
+        @include menu_bottom();
+    }
+
+    &__logo {
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        &-header {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.instruction {
+    margin-bottom: 40px;
+
+    &__list {
+        @include list_reset();
+    }
+
+    &__item {
+        
+        vertical-align: middle;
+        position: relative;
+        @include paragraph_text();
+        min-height: 60px;
+        margin: 0;
+        margin-bottom: 20px;
+        padding-left: 80px;
+
+        p {
+            margin: 0;
+            padding-top: 2px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 60px;
+            height: 60px;
+            top: 0;
+            left: 0;
+            background-color: $cat-green;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        top: 0;
+        left: 0;
+    }
+
+    picture {
+        display: block;
+    }
+}

@@ -1,0 +1,33 @@
+// * {
+//     font-family: 'Museo Sans Cyrl', sans-serif;
+// }
+// .container {
+//     max-width: 950px;
+//     margin: 0 auto;
+// }
+@import '../css/normalize.css';
+@import 'common/variables';
+@import 'common/mixins';
+
+
+@import 'common/scaffolding';
+@import 'common/logo-brand';
+@import 'blocks/button';
+@import 'blocks/page-header';
+@import 'blocks/main-nav';
+// @import 'blocks/stats';
+@import 'blocks/site-list';
+@import 'blocks/programs';
+@import 'blocks/select-program';
+@import 'blocks/program-carts';
+@import 'blocks/instruction';
+@import 'blocks/example';
+@import 'blocks/main-contacts';
+@import 'blocks/main-footer';
+// @import 'blocks/user-list';
+
+@import 'temp/outlines';
+
+.social {
+    fill: #000;
+}

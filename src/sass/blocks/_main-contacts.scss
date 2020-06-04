@@ -1,0 +1,25 @@
+.main-contacts {
+    @include container();
+    &__information {
+        width: 280px;
+        height: 114px;
+        margin: 0 auto;
+        td {
+            width: 50%;
+        }
+    }
+
+    &__invitation {
+        @include upper16_text();
+    }
+
+    &__adress {
+        @include paragraph_text();
+        line-height: 20px;
+    }
+
+    &__map {
+        height: 362px;
+        overflow: hidden;
+    }
+}

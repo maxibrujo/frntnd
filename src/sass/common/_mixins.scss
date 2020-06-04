@@ -1,0 +1,40 @@
+@mixin no-outline() {
+    outline: none;
+    background: transparent;
+    &::before {
+        display: none;
+    }
+}
+
+@mixin menu_bottom() {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+@mixin container() {
+    width: 320px;
+    margin: 0 auto;
+}
+
+@mixin paragraph_text() {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@mixin list_reset() {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin upper14_text() {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@mixin upper16_text() {
+    @include upper14_text();
+    font-size: 16px;
+    line-height: 20px;
+}

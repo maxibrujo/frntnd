@@ -1,0 +1,29 @@
+.select-program {
+    @include container();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $cat-green;
+    background-size: 320px 305px;
+    background: url("../img/index-background-mobile.jpg");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    margin-bottom: 22px;
+    &__title {
+        margin-top: 28px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        @include upper14_text();
+        line-height: 14px;
+        margin-bottom: 28px;
+    }
+
+    &__button {
+        width: 280px;
+    }
+
+
+}
