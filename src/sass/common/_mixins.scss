@@ -13,12 +13,34 @@
 @mixin container() {
     width: 320px;
     margin: 0 auto;
+    @media (min-width: $tablet-width) {
+        width: 768px;
+    }
+    @media (min-width: $desktop-width) {
+        width: 1440px;
+    }
 }
+
+@mixin inner_container() {
+    width: 280px;
+    margin: 0 auto;
+    @media (min-width: $tablet-width) {
+        width: 708px;
+    }
+    @media (min-width: $desktop-width) {
+        width: 1220px;
+    }
+}
+
 
 @mixin paragraph_text() {
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 18px;
+    @media (min-width: $tablet-width) {
+        font-size: 16px;
+      line-height: 24px;
+      }
 }
 
 @mixin list_reset() {
@@ -37,4 +59,7 @@
     @include upper14_text();
     font-size: 16px;
     line-height: 20px;
+    @media (min-width: $tablet-width) {
+        font-size: 20px;
+    }
 }

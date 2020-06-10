@@ -1,12 +1,15 @@
 .instruction {
-    margin-bottom: 40px;
+    @include inner_container();
+
+    &__header {
+        margin-top: 0;
+    }
 
     &__list {
         @include list_reset();
     }
 
     &__item {
-        
         vertical-align: middle;
         position: relative;
         @include paragraph_text();
@@ -14,10 +17,10 @@
         margin: 0;
         margin-bottom: 20px;
         padding-left: 80px;
+        padding-top: 2px;
 
         p {
             margin: 0;
-            padding-top: 2px;
         }
 
         &::before {
@@ -44,5 +47,108 @@
 
     picture {
         display: block;
+    }
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 0;
+
+        &__header {
+            margin-top: 0;
+            margin-bottom: 33px;
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__image {
+            top: 13px;
+            left: 10px;
+        }
+
+        &__item {
+            width: 245px;
+            min-height: 228px;
+            // margin-bottom: 89px;
+            margin-bottom: 58px;
+            margin-top: 31px;
+            padding-left: 0;
+            &:nth-child(odd) {
+                margin-right: 153px;
+            }
+            &::before {
+                width: 80px;
+                height: 80px;
+            }
+
+            p {
+                padding-top: 114px;
+            }
+
+            @for $i from 1 through 4 {
+                &--#{$i}::after {
+                    z-index: -1;
+                    position: absolute;
+                    top: -40px;
+                    right: 0;
+                    font-family: "Oswald", sans-serif;
+                    font-style: normal;
+                    font-size: 281px;
+                    line-height: 281px;
+                    color: $cat-grey;
+                }
+
+                &--#{$i}::after {
+                    content: "#{$i}";
+                }
+            }
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        &__header {
+            margin-bottom: 70px;
+        }
+
+        &__list {
+            justify-content: space-between;
+            
+        }
+
+        &__item {
+            width: 245px;
+            margin-bottom: 0;
+            margin-top: 0;
+            &:nth-child(odd) {
+                margin-right: 0;
+            }
+
+            &::before {
+                width: 80px;
+                height: 80px;
+            }
+
+            p {
+                padding-top: 114px;
+            }
+
+            @for $i from 1 through 4 {
+                &--#{$i}::after {
+                    z-index: -1;
+                    position: absolute;
+                    top: -40px;
+                    right: 0;
+                    font-family: "Oswald", sans-serif;
+                    font-style: normal;
+                    font-size: 281px;
+                    line-height: 281px;
+                    color: $cat-grey;
+                }
+
+                &--#{$i}::after {
+                    content: "#{$i}";
+                }
+            }
+        }
     }
 }

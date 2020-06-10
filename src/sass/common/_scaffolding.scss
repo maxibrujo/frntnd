@@ -8,6 +8,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 body {
+  border: 1px solid black;
   min-width: 320px;
   margin: 0;
   padding: 0;
@@ -28,6 +29,10 @@ h2 {
   font-size: 36px;
   line-height: 36px;
   font-weight: normal;
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+  line-height: 60px;
+  }
   // for ie11
   width: 100%;
 }
@@ -37,6 +42,9 @@ h4 {
   line-height: 37px;
   font-weight: normal;
   text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    font-size: 36px;
+  }
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -56,3 +64,8 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+// .page-main {
+//   @include container();
+//   border: 1px solid black;
+// }

@@ -1,4 +1,12 @@
 .programs {
-    width: 280px;
-    margin: 0 auto;
+    
+    margin-bottom: 40px;
+    @media (min-width: $tablet-width) {
+        @include menu_bottom();
+        margin-bottom: 46px;
+    }
+    @media (min-width: $desktop-width) {
+        border: none;
+        margin-bottom: 27px;
+    }
 }

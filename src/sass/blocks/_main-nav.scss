@@ -1,69 +1,180 @@
 .main-nav {
+
     &__wrapper {
         position: relative;
     }
 
-    &__toggle {
-        position: absolute;
-        display: block;
-        width: 65px;
-        height: 65px;
-        right: 0;
-        top: -66px;
-        cursor: pointer;
-        border: none;
-        background-color: #fff;
-    }
-
-    &__toggle::before,
-    &__toggle::after {
-        position: absolute;
-        content: "";
-        background-color: #000;
-    }
-
     &__list {
         width: 100%;
-        list-style: none;
         text-align: center;
     }
 
-    &--closed &__list {
-        display: none;
+    &__item {
+        padding: 5px 0;
+        a {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 20px;
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
+        }
+
+        &--active {
+            a {
+                &:hover,
+                &:active {
+                    opacity: 1;
+                }
+            }
+            span {
+                padding: 6px 0;
+                border-bottom: 2px solid $cat-green;
+            }
+            // text-decoration: underline;
+            // text-decoration-color: #68b738;
+        }
     }
 
-    &--nojs &__list {
-        position: static;
-    }
+    @media (max-width: $mobile-width-only) {
+        &__toggle {
+            position: absolute;
+            display: block;
+            width: 65px;
+            height: 65px;
+            right: 0;
+            top: -66px;
+            cursor: pointer;
+            border: none;
+            background-color: #fff;
+        }
 
-    &--nojs &__toggle {
-        display: none;
-    }
+        &__toggle::before,
+        &__toggle::after {
+            position: absolute;
+            content: "";
+            background-color: #000;
+        }
 
-    &--closed &__toggle::before {
-        width: 24px;
-        height: 2px;
-        left: 21px;
-        top: 23px;
-        box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
-    }
+        &--closed &__list {
+            display: none;
+        }
 
-    &--opened &__toggle {
-        &::before,
-        &:after {
-            top: 31px;
-            right: 20px;
+        &--nojs &__list {
+            position: static;
+        }
+
+        &--nojs &__toggle {
+            display: none;
+        }
+
+        &--closed &__toggle::before {
             width: 24px;
             height: 2px;
+            left: 21px;
+            top: 23px;
+            box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
         }
 
-        &::before {
-            transform: rotate(45deg);
-            box-shadow: none;
+        &--opened &__toggle {
+            &::before,
+            &:after {
+                top: 31px;
+                right: 20px;
+                width: 24px;
+                height: 2px;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+                box-shadow: none;
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+        &__item {
+            @include menu_bottom();
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        min-height: 58px;
+        margin-top: 24px;
+
+        &__toggle {
+            display: none;
         }
 
-        &::after {
-            transform: rotate(-45deg);
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-height: 58px;
+            width: 438px;
+        }
+
+        &__item {
+            padding: 0;
+            a {
+                font-size: 18px;
+                line-height: 61px;
+                padding: 0;
+                margin: 0;
+                // padding-top: 43px;
+            }
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        &__item {
+            padding: 5px 0;
+            span {
+                color: #ffffff;
+            }
+
+            &--active {
+                a {
+                    &:hover,
+                    &:active {
+                        opacity: 1;
+                    }
+                }
+                span {
+                    padding: 6px 0;
+                    border-bottom: 2px solid #ffffff;
+                }
+                // text-decoration: underline;
+                // text-decoration-color: #68b738;
+            }
+        }
+
+        min-height: 59px;
+        margin-top: 70px;
+
+        &__list {
+            min-height: 59px;
+            min-width: 476px;
+            margin: 0;
+        }
+
+        &__item {
+            padding: 0;
+            a {
+                font-size: 20px;
+                line-height: 25px;
+                padding: 0;
+                margin: 0;
+                // padding-top: 43px;
+            }
         }
     }
 }

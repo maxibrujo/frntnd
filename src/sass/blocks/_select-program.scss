@@ -1,5 +1,6 @@
 .select-program {
     @include container();
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,22 +9,92 @@
     background: url("../img/index-background-mobile.jpg");
     background-repeat: no-repeat;
     color: #ffffff;
-    margin-bottom: 22px;
+
+    &__container {
+        z-index: 1;
+        margin-bottom: 22px;
+    }
+
+    &__title,
+    &__description {
+        text-align: center;
+    }
+
     &__title {
         margin-top: 28px;
-        text-align: center;
         margin-bottom: 24px;
     }
 
     &__description {
+        display: block;
+        text-align: center;
         @include upper14_text();
         line-height: 14px;
-        margin-bottom: 28px;
+        margin-bottom: 298px;
     }
 
     &__button {
         width: 280px;
     }
 
+    picture {
+        position: absolute;
+        top: 167px;
+        left: 20px;
+    }
 
+    @media (min-width: $tablet-width) {
+        color: #000000;
+        background: none;
+
+        &__container {
+            margin-left: 115px;
+            margin-right: auto;
+            margin-bottom: 529px;
+        }
+
+        &__title,
+        &__description {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: 20px;
+            margin-bottom: 45px;
+        }
+
+        &__button {
+            width: 245px;
+        }
+
+        picture {
+            top: 215px;
+            left: 29px;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        padding-left: 83px;
+        margin-bottom: 80px;
+
+        &__container {
+            margin-bottom: 187px;
+        }
+
+        picture {
+            top: 12px;
+            left: 561px;
+        }
+
+        &__title {
+            margin-top: 92px;
+            margin-bottom: 44px;
+        }
+
+        &__description {
+            margin-bottom: 52px;
+        }
+    }
 }

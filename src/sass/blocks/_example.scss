@@ -3,6 +3,11 @@
     background-color: $cat_grey;
     padding-top: 30px;
     padding-bottom: 35px;
+    margin-bottom: 30px;
+
+    &__wrapper {
+        @include inner_container();
+    }
 
     &__header {
         margin: 0;
@@ -28,6 +33,11 @@
         border-radius: 3px;
     }
 
+    &__data {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__value {
         display: block;
         margin-bottom: 5px;
@@ -41,17 +51,14 @@
         position: absolute;
         width: 68px;
         bottom: -15px;
-        left: 17px;
+        left: auto;
+        right: auto;
         padding: 0 10px;
         font-family: Arial, sans-serif;
         font-size: 12px;
         line-height: 12px;
         text-align: center;
         background-color: $cat_grey;
-    }
-
-    &__container {
-        margin: 0 20px;
     }
 
     &__description {
@@ -63,6 +70,9 @@
         line-height: 20px;
         text-align: center;
         margin-bottom: 35px;
+        br {
+            display: none;
+        }
     }
 
     &__photo-container {
@@ -81,24 +91,233 @@
     }
 
     &__range {
-        display: flex;
-        align-items: center;
-        width: 197px;
-        justify-content: space-between;
-        margin: 0 auto;
         margin-top: 35px;
-
         p {
             @include upper16_text();
         }
     }
 
     &__range-control {
+        display: block;
+        margin: 0 auto;
+        position: relative;
         appearance: none;
+        outline: none;
         width: 82px;
         height: 12px;
         background-color: #fff;
         border: 1px solid #cdcdcd;
         border-radius: 6px;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            -ms-appearance: none;
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4caf50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        &::-moz-range-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4caf50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        &::-ms-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4caf50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            @include upper16_text();
+            color: #000000;
+            top: -5px;
+        }
+        &::before {
+            content: "Было";
+            left: 0;
+            left: -59px;
+        }
+        &::after {
+            content: "Стало";
+            right: 0;
+            right: -59px;
+        }
+    }
+
+    
+            
+
+    @media (min-width: $tablet-width) and (max-width: 1199px) {
+        &__data {
+            flex-direction: row;
+        }
+
+        &__unit {
+            background-color: #ffffff;
+        }
+
+        &__price {
+            text-align: right;
+            br {
+                display: inline;
+            }
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        background: linear-gradient(#ffffff 57%, $cat_grey 57% 100%);
+        margin-bottom: 65px;
+        padding-top: 0;
+        padding-bottom: 68px;
+
+        &__header {
+            margin-bottom: 58px;
+        }
+
+        &__description {
+            margin-bottom: 56px;
+        }
+
+        &__data {
+            justify-content: space-between;
+            margin-bottom: 86px;
+        }
+
+        &__list {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-content: center;
+            margin-bottom: 0;
+        }
+
+        &__item {
+            width: 160px;
+            height: 70px;
+            margin-right: 42px;
+        }
+
+        &__value {
+            font-size: 30px;
+            line-height: 37px;
+        }
+
+        &__unit {
+            width: auto;
+            bottom: -6px;
+            padding: 0 8px;
+            font-size: 14px;
+            line-height: 14px;
+        }
+
+        &__price {
+            font-size: 20px;
+            line-height: 30px;
+            padding-top: 7px;
+            margin-bottom: 0;
+        }
+
+        &__range {
+            margin-top: 13px;
+        }
+
+        &__photo--before {
+            top: 18px;
+            left: 45px;
+            // width: 160px;
+            // overflow: hidden;
+        }
+
+        &__photo--after {
+            margin-left: 51px;
+        }
+
+        &__range-control {
+            width: 422px;
+            height: 2px;
+            background-color: $cat-grey-dark;
+            border: 2px solid $cat-grey-dark;
+            border-radius: 3px;
+
+            &::before,
+            &::after {
+                color: #000000;
+                top: -16px;
+            }
+            &::before {
+                content: "Было";
+                left: 0;
+                left: -75px;
+            }
+            &::after {
+                content: "Стало";
+                right: 0;
+                right: -74px;
+            }
+
+            &::before,
+            &::after {
+                padding: 6px 0;
+                border-bottom: 1px dotted #bebebe;
+            }
+
+            &:hover::before,
+            &:hover::after {
+                border-bottom: 1px solid #989898;
+            }
+
+            &:active::before,
+            &:active::after {
+                border-bottom: 1px transparent;
+            }
+        }
+    }
+    
+    @media (min-width: $desktop-width) {
+        background: linear-gradient(#ffffff 26%, $cat_grey 26% 100%);
+        padding: 0;
+        margin-bottom: 0;
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__container {
+            width: 436px;
+        }
+
+        &__photo-container {
+            width: 568px;
+        }
+
+        &__header {
+            margin-top: 60px;
+            margin-bottom: 148px;
+        }
+
+        &__list {
+            margin-bottom: 60px;
+        }
+
+        &__data {
+            margin-bottom: 0;
+        }
+
+        &__price {
+            display: flex;
+            justify-content: space-between;
+            width: 327px;
+            padding: 0;
+            margin-bottom: 76px;
+        }
     }
 }

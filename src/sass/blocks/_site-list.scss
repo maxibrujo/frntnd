@@ -1,46 +1,11 @@
 .site-list {
     @include list_reset();
-    
-    &__item {
-    @include menu_bottom();
-
     a {
-        display: block;
-        margin: auto;
-        padding-top: 20px;
-        padding-bottom: 20px;
         text-transform: uppercase;
         text-decoration: none;
         color: #000000;
-        height: 25px;
-        &:hover{
-            opacity: 0.6;
-        }
-    
-        &:active {
-            opacity: 0.3;
-        }
-        
-    }
-
-
-    &--active {
-        a {
-            &:hover,
-            &:active {
-                opacity: 1;
-            }
-        }
-        span {
-            padding: 6px 0;
-            border-bottom: 2px solid $cat-green;
-        }
-        // text-decoration: underline;
-        // text-decoration-color: #68b738;
     }
 }
-}
-
 
 // .site-list a[href] {
 //     &:hover {

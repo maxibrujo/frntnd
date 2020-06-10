@@ -1,7 +1,9 @@
 .page-header {
     @include container();
-    display: flex;
-    flex-direction: column;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
 
     &__logo,
     &__brand {
@@ -17,20 +19,56 @@
         }
     }
 
-    &__wrapper {
-        position: relative;
-        display: flex;
-        justify-content: space-around;
-        height: 65px;
-        @include menu_bottom();
+    @media (max-width: $mobile-width-only) {
+        &__logo-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            min-height: 65px;
+            @include menu_bottom();
+        }
+
+        &__logo {
+            position: absolute;
+            left: 20px;
+            top: 12px;
+            &-header {
+                text-align: center;
+            }
+        }
     }
 
-    &__logo {
-        position: absolute;
-        left: 20px;
-        top: 12px;
-        &-header {
-            text-align: center;
+    @media (min-width: $tablet-width) {
+        &__wrapper {
+            @include inner_container();
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__brand {
+            display: none;
+        }
+
+        &__logo-image {
+            margin-top: 24px;
+            width: 173px;
+            height: 58px;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        background-origin: padding-box;
+        background-color: $cat-green;
+        background-size: 720px 696px;
+        background: url("../img/index-background-desktop.jpg");
+        background-repeat: no-repeat;
+        background-position: top right;
+        
+        &__logo-image {
+            margin-top: 54px;
+            width: 202px;
+            height: 59px;
         }
     }
 }
+

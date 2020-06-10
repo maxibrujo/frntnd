@@ -1,26 +1,86 @@
 .main-contacts {
     @include container();
+    position: relative;
     &__information {
-        width: 280px;
-        height: 114px;
-        margin: 0 auto;
-        td {
-            width: 50%;
-        }
-        border-collapse: collapse;
+        @include inner_container();
+        // height: 114px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 27px;
+    }
+
+    &__invitation,
+    &__adress {
+        display: block;
     }
 
     &__invitation {
         @include upper16_text();
+        margin-right: 20px;
     }
 
     &__adress {
         @include paragraph_text();
         line-height: 20px;
+        margin: 0;
     }
 
     &__map {
         height: 362px;
         overflow: hidden;
+    }
+
+    @media (max-width: $mobile-width-only) {
+        &__adress {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        &__information {
+            width: auto;
+            margin: 0 71px;
+            margin-bottom: 62px;
+        }
+        &__invitation {
+            width: 155px;
+            margin: 0;
+            line-height: 25px;
+        }
+
+        &__adress {
+            width: 160px;
+            text-align: right;
+            line-height: 20px;
+        }
+
+        &__map {
+            height: 396px;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        &__information {
+            position: absolute;
+            width: 409px;
+            height: 201px;
+            background-color: #ffffff;
+            left: 110px;
+            top: 95px;
+            padding-left: 76px;
+            padding-right: 85px;
+            margin: 0;
+        }
+
+        &__adress {
+            text-align: left;
+        }
+
+        &__map {
+            height: 400px;
+        }
     }
 }
