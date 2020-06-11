@@ -12,18 +12,29 @@
     &__item {
         padding: 5px 0;
         a {
-            display: block;
+            position: relative;
             margin-top: 10px;
             margin-bottom: 10px;
             height: 35px;
             line-height: 35px;
             font-size: 20px;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+            
             &:hover {
                 opacity: 0.6;
             }
 
             &:active {
                 opacity: 0.3;
+                
             }
         }
 

@@ -51,8 +51,8 @@
         position: absolute;
         width: 68px;
         bottom: -15px;
-        left: auto;
-        right: auto;
+        left: 50%;
+        transform: translate(-50%);
         padding: 0 10px;
         font-family: Arial, sans-serif;
         font-size: 12px;
@@ -173,7 +173,7 @@
     }
 
     @media (min-width: $tablet-width) {
-        background: linear-gradient(#ffffff 57%, $cat_grey 57% 100%);
+        background: linear-gradient(to bottom, #ffffff 57%, $cat_grey 57%);
         margin-bottom: 65px;
         padding-top: 0;
         padding-bottom: 68px;
@@ -211,6 +211,7 @@
 
         &__unit {
             width: auto;
+            white-space: nowrap;
             bottom: -6px;
             padding: 0 8px;
             font-size: 14px;
@@ -281,7 +282,7 @@
     }
     
     @media (min-width: $desktop-width) {
-        background: linear-gradient(#ffffff 26%, $cat_grey 26% 100%);
+        background: linear-gradient(#ffffff 26%, $cat_grey 26%);
         padding: 0;
         margin-bottom: 0;
 
