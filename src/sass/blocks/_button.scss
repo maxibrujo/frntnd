@@ -20,7 +20,7 @@
     }
     
 
-    &--green {
+    &_green {
         background-color: $cat-green;
         color: #ffffff;
         &:hover,
@@ -32,8 +32,19 @@
     }
     }
 
+    &_grey {
+        background-color: $cat-grey;
+        color: #000000;
+        &:hover,
+        &:active {
+        background-color: #ebebeb;
+        }
+        &:active span{
+        opacity: 0.3;
+    }
+    }
+
     @media (min-width: $tablet-width) {
-        height: 52px;
         font-size: 20px;
         line-height: 20px;
     }

@@ -24,7 +24,7 @@
             background-color: $cat-green;
         }
 
-        &--down {
+        &_down {
             &::after {
                 transform: scale(-1, 1);
                 top: 24px;
@@ -34,7 +34,7 @@
                 width: 35px;
             }
         }
-        &--up {
+        &_up {
             &::after {
                 top: 35px;
                 left: 13px;
@@ -129,7 +129,7 @@
                 right: 60px;
             }
 
-            &--down {
+            &_down {
                 &::after {
                     top: 80px;
                     right: 90px;
@@ -137,7 +137,7 @@
                     width: 140px;
                 }
             }
-            &--up {
+            &_up {
                 &::after {
                     top: 135px;
                     right: 30px;
@@ -204,7 +204,7 @@
                 top: 47px;
             }
 
-            &--down {
+            &_down {
                 &::after {
                     top: 41px;
                     left: 66px;
@@ -212,7 +212,7 @@
                     width: 70px;
                 }
             }
-            &--up {
+            &_up {
                 &::after {
                     top: 69px;
                     left: 34px;

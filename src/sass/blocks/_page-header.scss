@@ -72,6 +72,10 @@
         background: url("../img/index-background-desktop.jpg");
         background-repeat: no-repeat;
         background-position: top right;
+
+        &_catalog {
+            background: none;
+        }
         
         &__logo-image {
             margin-top: 54px;

@@ -1,0 +1,15 @@
+.site-cart {
+
+    &__description {
+        @include list_reset();
+    }
+
+    &__title {
+        @include upper16_text();
+    }
+
+    &__parameter {
+        display: flex;
+        justify-content: space-between;
+    }
+}

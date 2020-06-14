@@ -1,0 +1,174 @@
+.additional {
+    @include inner_container();
+    margin-bottom: 35px;
+    &__header {
+        position: relative;
+        display: block;
+        padding-bottom: 30px;
+        @include menu_bottom();
+        border-color: #cdcdcd;
+        margin: 0;
+        text-transform: none;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 53px;
+            height: 3px;
+            right: -20px;
+            top: 20px;
+            background-color: $cat-green;
+        }
+    }
+
+    &__list {
+        @include list_reset();
+        margin-bottom: 39px;
+    }
+
+    &__item {
+        @include menu_bottom();
+    }
+
+    &__container {
+        padding-top: 12px;
+    }
+
+    &__title {
+        margin-bottom: 14px;
+    }
+
+    &__parameter {
+        @include paragraph_text();
+        line-height: 16px;
+        margin-bottom: 15px;
+    }
+
+    &__button {
+        margin-bottom: 17px;
+    }
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 76px;
+        &__header {
+            padding-left: 37px;
+            border: none;
+            padding-bottom: 78px;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 28px;
+                height: 3px;
+                left: -30px;
+                top: 22px;
+                background-color: $cat-green;
+            }
+
+            &::after {
+                width: 327px;
+                right: -30px;
+                top: 22px;
+            }
+        }
+
+        &__list {
+            margin-bottom: 69px;
+        }
+
+        &__item {
+            border: 1px solid #e6e6e6;
+            padding: 27px 37px;
+            padding-top: 25px;
+            &:not(:last-child) {
+                border-bottom: none;
+            }
+
+            
+        }
+
+        &__container {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__title,
+        &__parameter {
+            margin: 0;
+            margin-bottom: 25px;
+        }
+        &__button {
+            margin-bottom: 0;
+        }
+
+        &__parameter {
+            span {
+                margin-left: 52px;
+            }
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        margin-bottom: 86px;
+        &__header {
+            padding-left: 0;
+            &::before {
+               
+                width: 70px;
+                left: -110px;
+            }
+
+            &::after {
+                width: 957px;
+                right: -110px;
+            }
+        }
+        
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__list {
+            width: 895px;
+            margin-bottom: 0;
+        }
+
+        &__cart {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__container {
+            width: 611px;
+            align-items: center;
+        }
+
+        &__button {
+            width: 245px;
+        }
+
+        &__item {
+            border-color: #cdcdcd;
+            border-left: none;
+            border-right: none;
+            padding: 15px 0;
+            padding-bottom: 16px;
+        }
+
+        &__title,
+        &__parameter {
+            margin: 0;
+            display: flex;
+        }
+
+        &__parameter {
+            min-width: 284px;
+            span {
+                margin: 0;
+            }
+        }
+    }
+}

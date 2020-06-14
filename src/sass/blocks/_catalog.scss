@@ -1,0 +1,188 @@
+.catalog {
+    @include container();
+    margin-bottom: 30px;
+    &__header {
+        margin: 0;
+        margin-top: 28px;
+
+        span {
+            display: block;
+            @include inner_container();
+
+            margin-bottom: 38px;
+        }
+    }
+
+    &__list
+    // &__description
+    {
+        @include list_reset();
+    }
+
+    &__item {
+        &_extend {
+            padding-top: 58px;
+            position: relative;
+            text-align: center;
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                width: 30px;
+                height: 2px;
+                top: 40px;
+                left: calc(50% - 15px);
+                background-color: #d3d3d3;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__container {
+        padding-top: 22px;
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+    &__description {
+        @include small_text();
+        line-height: 16px;
+        width: 100%;
+    }
+
+    &__description,
+    &__button {
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: $mobile-width-only) {
+        &__header {
+            @include menu_bottom();
+        }
+
+        &__item {
+            @include menu_bottom();
+        }
+
+        &__cart {
+            @include inner_container();
+        }
+        &__description {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        margin-bottom: 68px;
+        &__header {
+            margin-top: 60px;
+            margin-bottom: 23px;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include inner_container();
+        }
+
+        &__container {
+            padding: 0;
+            min-height: 318px;
+        }
+
+        &__cart {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 431px;//в ie при min-height button не прижимается вниз 
+            width: 324px;
+        }
+
+
+        &__wrapper {
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__photo {
+            position: absolute;
+            bottom: 225px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__title {
+            padding-top: 162px;
+            text-align: center;
+            margin-bottom: 18px;
+            br {
+                display: none;
+            }
+            span {
+                display: block;
+            }
+        }
+
+        &__item {
+            margin-top: 140px;
+            background-color: $cat_grey;
+            &:last-child {
+                border: 1px solid #e6e6e6;
+                background: none;
+            }
+
+            &_extend {
+                padding: 0;
+                h5 {
+                    margin-bottom: 22px;
+                }
+                p {
+                    line-height: 20px;
+                }
+                &::before,
+                &::after {
+                    width: 60px;
+                    top: 83px;
+                    left: calc(50% - 30px);
+                }
+            }
+        }
+
+        &__description {
+            margin-bottom: 33px;
+        }
+
+        &__parameter {
+            height: 32px;
+            line-height: 32px;
+            @include menu_bottom();
+            margin: 0 38px;
+        }
+
+        &__button {
+            margin: 0 38px;
+            margin-bottom: 40px;
+        }
+    }
+
+    @media (min-width: $desktop-width) {
+        &__cart {
+            width: 245px;
+        }
+    }
+}

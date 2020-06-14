@@ -54,9 +54,7 @@
         left: 50%;
         transform: translate(-50%);
         padding: 0 10px;
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-        line-height: 12px;
+        @include small_text();
         text-align: center;
         background-color: $cat_grey;
     }
@@ -79,14 +77,14 @@
         position: relative;
     }
 
-    &__photo--before {
+    &__photo_before {
         position: absolute;
         top: 7px;
         width: 160px;
         overflow: hidden;
     }
 
-    &__photo--after {
+    &__photo_after {
         margin-left: 42px;
     }
 
@@ -229,14 +227,14 @@
             margin-top: 13px;
         }
 
-        &__photo--before {
+        &__photo_before {
             top: 18px;
             left: 45px;
             // width: 160px;
             // overflow: hidden;
         }
 
-        &__photo--after {
+        &__photo_after {
             margin-left: 51px;
         }
 

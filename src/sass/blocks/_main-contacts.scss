@@ -24,6 +24,7 @@
         @include paragraph_text();
         line-height: 20px;
         margin: 0;
+        font-style: normal;
     }
 
     &__map {

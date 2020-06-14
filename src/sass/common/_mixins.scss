@@ -32,6 +32,14 @@
     }
 }
 
+@mixin small_text() {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    @media (min-width: $tablet-width) {
+        font-size: 16px;
+    }
+}
 
 @mixin paragraph_text() {
     font-family: Arial, sans-serif;
@@ -39,8 +47,8 @@
     line-height: 18px;
     @media (min-width: $tablet-width) {
         font-size: 16px;
-      line-height: 24px;
-      }
+        line-height: 24px;
+    }
 }
 
 @mixin list_reset() {

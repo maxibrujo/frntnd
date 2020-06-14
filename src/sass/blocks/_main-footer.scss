@@ -43,7 +43,8 @@
         }
     }
 
-    &__social-icon {
+    &__social-icon,
+    &__htmla {
         position: relative;
         &:before {
             content: "";
@@ -119,21 +120,21 @@
         }
 
         &__social-icon {
-            &--vk {
+            &_vk {
                 svg {
                     width: 30px;
                     height: 16px;
                 }
             }
 
-            &--inst {
+            &_inst {
                 svg {
                     width: 23px;
                     height: 23px;
                 }
             }
 
-            &--fb {
+            &_fb {
                 svg {
                     width: 14px;
                     height: 28px;

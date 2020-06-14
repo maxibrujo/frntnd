@@ -86,7 +86,7 @@
             }
 
             @for $i from 1 through 4 {
-                &--#{$i}::after {
+                &_#{$i}::after {
                     z-index: -1;
                     position: absolute;
                     top: -40px;
@@ -98,7 +98,7 @@
                     color: $cat-grey;
                 }
 
-                &--#{$i}::after {
+                &_#{$i}::after {
                     content: "#{$i}";
                 }
             }
@@ -133,7 +133,7 @@
             }
 
             @for $i from 1 through 4 {
-                &--#{$i}::after {
+                &_#{$i}::after {
                     z-index: -1;
                     position: absolute;
                     top: -40px;
@@ -145,7 +145,7 @@
                     color: $cat-grey;
                 }
 
-                &--#{$i}::after {
+                &_#{$i}::after {
                     content: "#{$i}";
                 }
             }
