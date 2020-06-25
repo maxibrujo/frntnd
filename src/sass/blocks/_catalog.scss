@@ -1,17 +1,6 @@
 .catalog {
     @include container();
     margin-bottom: 30px;
-    &__header {
-        margin: 0;
-        margin-top: 28px;
-
-        span {
-            display: block;
-            @include inner_container();
-
-            margin-bottom: 38px;
-        }
-    }
 
     &__list
     // &__description
@@ -67,10 +56,7 @@
     }
 
     @media (max-width: $mobile-width-only) {
-        &__header {
-            @include menu_bottom();
-        }
-
+        
         &__item {
             @include menu_bottom();
         }

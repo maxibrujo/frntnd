@@ -2,10 +2,25 @@
   font-weight: normal;
   font-family: "Oswald";
   font-style: normal;
-  src: url('../fonts/Oswald-Regular.woff2') format("woff2"), url('../fonts/Oswald-Regular.woff') format("woff");
+  src: url("../fonts/Oswald-Regular.woff2") format("woff2"), url("../fonts/Oswald-Regular.woff") format("woff");
 }
 
 // @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/* clears the 'X' from Internet Explorer */
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
 
 body {
   border: 1px solid black;
@@ -31,7 +46,7 @@ h2 {
   font-weight: normal;
   @media (min-width: $tablet-width) {
     font-size: 60px;
-  line-height: 60px;
+    line-height: 60px;
   }
   // for ie11
   width: 100%;
@@ -39,9 +54,8 @@ h2 {
 
 h4 {
   font-size: 24px;
-  line-height: 37px;
+  line-height: 24px;
   font-weight: normal;
-  text-transform: uppercase;
   @media (min-width: $tablet-width) {
     font-size: 36px;
   }
@@ -63,6 +77,58 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.title-decorated {
+  margin: 0;
+  text-transform: none;
+  span {
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 0 20px;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      width: 320px;
+      height: 3px;
+      left: 0;
+      top: 14px;
+      background-color: $cat-green;
+    }
+  }
+
+  @media (min-width: $mobile-width-only) {
+    .title-decorated {
+      span {
+        max-width: 181px;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-left: 30px;
+    span {
+      max-width: fit-content;
+      padding: 0 41px;
+      &::before {
+        width: 768px;
+        left: -30px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 70px;
+    span {
+      &::before {
+        width: 1440px;
+        left: -70px;
+      }
+    }
+  }
 }
 
 // .page-main {

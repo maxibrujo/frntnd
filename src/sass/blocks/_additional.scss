@@ -1,24 +1,13 @@
 .additional {
-    @include inner_container();
+    
     margin-bottom: 35px;
     &__header {
-        position: relative;
-        display: block;
-        padding-bottom: 30px;
-        @include menu_bottom();
-        border-color: #cdcdcd;
-        margin: 0;
-        text-transform: none;
+        padding-bottom: 32px;
+        
+    }
 
-        &::after {
-            position: absolute;
-            content: "";
-            width: 53px;
-            height: 3px;
-            right: -20px;
-            top: 20px;
-            background-color: $cat-green;
-        }
+    &__wrapper {
+        @include inner_container();
     }
 
     &__list {
@@ -27,7 +16,10 @@
     }
 
     &__item {
-        @include menu_bottom();
+        &:first-child {
+            border-top: 1px solid #cdcdcd;
+        }
+        border-bottom: 1px solid #cdcdcd;
     }
 
     &__container {
@@ -51,24 +43,8 @@
     @media (min-width: $tablet-width) {
         margin-bottom: 76px;
         &__header {
-            padding-left: 37px;
-            border: none;
+            
             padding-bottom: 78px;
-            &::before {
-                position: absolute;
-                content: "";
-                width: 28px;
-                height: 3px;
-                left: -30px;
-                top: 22px;
-                background-color: $cat-green;
-            }
-
-            &::after {
-                width: 327px;
-                right: -30px;
-                top: 22px;
-            }
         }
 
         &__list {

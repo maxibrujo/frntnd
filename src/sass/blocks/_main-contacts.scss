@@ -1,30 +1,38 @@
 .main-contacts {
     @include container();
     position: relative;
+    
+    &_grey {
+        background-color: $cat-grey;
+    }
     &__information {
-        @include inner_container();
+        @include inner_container-form();
+        padding-top: 30px;
         // height: 114px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 27px;
-    }
+        padding-bottom: 27px;
 
-    &__invitation,
-    &__adress {
-        display: block;
+        // p {
+        //     margin: 0;
+        // }
     }
 
     &__invitation {
         @include upper16_text();
-        margin-right: 20px;
+        max-width: 124px;
+        
     }
 
-    &__adress {
+    &__address {
+        max-width: 136px;
+        
         @include paragraph_text();
         line-height: 20px;
         margin: 0;
         font-style: normal;
+        
     }
 
     &__map {
@@ -33,8 +41,8 @@
     }
 
     @media (max-width: $mobile-width-only) {
-        &__adress {
-            br {
+        &__address {
+            br:first-child {
                 display: none;
             }
         }
@@ -42,18 +50,17 @@
 
     @media (min-width: $tablet-width) {
         &__information {
-            width: auto;
-            margin: 0 71px;
-            margin-bottom: 62px;
+            padding-top: 63px;
+            padding-bottom: 61px;
         }
+
         &__invitation {
-            width: 155px;
-            margin: 0;
+            max-width: 155px;
             line-height: 25px;
         }
 
-        &__adress {
-            width: 160px;
+        &__address {
+            max-width: 155px;
             text-align: right;
             line-height: 20px;
         }
@@ -67,7 +74,6 @@
         &__information {
             position: absolute;
             width: 409px;
-            height: 201px;
             background-color: #ffffff;
             left: 110px;
             top: 95px;

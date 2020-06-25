@@ -111,4 +111,6 @@ gulp.task('clean',function() {
     return del('build');
 });
 
+gulp.task('short', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'html'));
+
 gulp.task('default', gulp.series(gulp.task('clean'), gulp.task('sprite'), gulp.parallel('watch', 'server', 'styles1', 'styles', 'scripts', 'fonts', 'html', 'pictures')));

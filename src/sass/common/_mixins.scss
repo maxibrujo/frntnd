@@ -7,7 +7,7 @@
 }
 
 @mixin menu_bottom() {
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $line-grey;
 }
 
 @mixin container() {
@@ -26,6 +26,17 @@
     margin: 0 auto;
     @media (min-width: $tablet-width) {
         width: 708px;
+    }
+    @media (min-width: $desktop-width) {
+        width: 1220px;
+    }
+}
+
+@mixin inner_container-form() {
+    width: 280px;
+    margin: 0 auto;
+    @media (min-width: $tablet-width) {
+        width: 631px;
     }
     @media (min-width: $desktop-width) {
         width: 1220px;
@@ -60,7 +71,7 @@
 @mixin upper14_text() {
     font-size: 14px;
     text-transform: uppercase;
-    margin: 0;
+    // margin: 0;
 }
 
 @mixin upper16_text() {

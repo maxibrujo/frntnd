@@ -8,11 +8,9 @@
     <title>Cat Energy</title>
     <link rel="stylesheet" href="css/style.min.css">
     <script src="js/picturefill.js"></script>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
-    <h1 class="visually-hidden">Программы питания для котов Cat Energy</h1>
     <header class="page-header page-header_catalog">
         <div class="page-header__wrapper">
             <div class="page-header__logo-wrapper">
@@ -40,7 +38,7 @@
                             <a><span>Каталог продукции</span></a>
                         </li>
                         <li class="main-nav__item main-nav__item_catalog site-list__item">
-                            <a href="#"><span>Подбор программы</span></a>
+                            <a href="form.html"><span>Подбор программы</span></a>
                         </li>
                     </ul>
                 </div>
@@ -48,8 +46,8 @@
         </div>
     </header>
     <main class="page-main">
+        <h2 class="page-main__header page-main__header_catalog"><span>Каталог продукции</span></h2>
         <section class="catalog">
-            <h2 class="catalog__header"><span>Каталог продукции</span></h2>
             <ul class="catalog__list">
                 <li class="catalog__item">
                     <div class="catalog__cart">
@@ -234,7 +232,7 @@
             </ul>
         </section>
         <section class="additional">
-            <h4 class="additional__header">Дополнительные товары</h4>
+            <h4 class="additional__header title-decorated"><span>Дополнительные товары</span></h4>
             <div class="additional__wrapper">
                 <ul class="additional__list">
                     <li class="additional__item">
@@ -280,6 +278,24 @@
                     <img class="gift__icon" src="img/gift.svg" alt="Подарок" width="55" height="60">
                     <p class="gift__text">Закажите все<br>и получите чехол для<br>кота в подарок!</p>
                 </div>
+            </div>
+        </section>
+        <section class="main-contacts main-contacts_grey">
+            <div class="main-contacts__information">
+                <div class="main-contacts__invitation">
+                    Приглашаем<br>к сотрудничеству дилеров!
+                </div>
+                <address class="main-contacts__address">
+                    ул. Большая Конюшенная, д. 19/8<br><br>Санкт-Петербург
+                </address>
+            </div>
+            <div class="main-contacts__map">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="img/map-desktop.jpg 1x, img/map-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/map-tablet.jpg 1x, img/map-tablet@2x.jpg 2x">
+                    <img src="img/map.jpg" srcset="img/map@2x.jpg 2x"
+                        alt="Наш адрес: улица Большая Конюшенная, дом 19/8, Санкт-Петербург">
+                </picture>
             </div>
         </section>
     </main>
