@@ -79,55 +79,25 @@
     &__photo_before {
         position: absolute;
         top: 7px;
-        width: 160px;
+        width: 311px;
+        left: -20px;
         overflow: hidden;
     }
 
     &__photo_after {
-        margin-left: 42px;
+        box-sizing: border-box;
+        width: 311px;
+        transform: translateX(-20px);
+        overflow: hidden;
+        padding-left: 43px;
+        
     }
 
     &__range {
+        position: relative;
         margin-top: 35px;
         p {
             @include upper16_text();
-        }
-    }
-
-    &__range-control {
-        display: block;
-        margin: 0 auto;
-        position: relative;
-        appearance: none;
-        outline: none;
-        width: 82px;
-        height: 12px;
-        background-color: #fff;
-        border: 1px solid #cdcdcd;
-        border-radius: 6px;
-
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none; /* Override default look */
-            -ms-appearance: none;
-            appearance: none;
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4caf50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-        &::-moz-range-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4caf50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
-        }
-
-        &::-ms-thumb {
-            width: 25px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4caf50; /* Green background */
-            cursor: pointer; /* Cursor on hover */
         }
 
         &::before,
@@ -139,18 +109,136 @@
         }
         &::before {
             content: "Было";
-            left: 0;
-            left: -59px;
+            top: -4px;
+            left: 44px;
         }
         &::after {
             content: "Стало";
-            right: 0;
-            right: -59px;
+            top: -4px;
+            right: 39px;
         }
     }
 
-    
-            
+    &__range-control {
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+        width: 100%; /* Specific width is required for Firefox. */
+        background: transparent; /* Otherwise white in Chrome */
+        outline: none;
+        width: 72px;
+        height: 6px;
+        border-top: 3px solid #ffffff;
+        border-right: 3px solid #ffffff;
+        border-bottom: 3px solid #ffffff;
+        border-left: 3px solid #ffffff;
+        border-radius: 6px;
+        padding: 0;
+        box-shadow: 0 0 0 1px #cdcdcd;
+
+        &:focus {
+            outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+        }
+
+        &::-ms-fill-lower {
+            background-color: $cat-green;
+            border: none;
+            height: 6px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        &::-ms-fill-upper {
+            background-color: #ffffff;
+        }
+
+        &::-ms-thumb {
+            height: 6px;
+            width: 6px;
+            border-radius: 6px;
+            background-color: $cat-green;
+            border: none;
+            cursor: pointer;
+        }
+
+        &::-ms-track {
+            color: transparent; /* Убираем линейку */
+            border: none; /* Убираем рамку */
+            background-color: #fff;
+        }
+
+        &::-ms-tooltip {
+            display: none;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 6px;
+            width: 6px;
+            border-radius: 6px;
+            background-color: $cat-green;
+            border: none;
+            cursor: pointer;
+            box-shadow: -65px 0 0 62px $cat-green;
+        }
+
+        &::-webkit-slider-runnable-track {
+            cursor: pointer;
+            -webkit-appearance: none;
+            background-color: #ffffff;
+            border: none;
+            height: 6px;
+        }
+
+        &::-moz-range-thumb {
+            // height: 0;
+            // width: 0;
+            // border: none;
+            // cursor: pointer;
+            height: 6px;
+            width: 6px;
+            border-radius: 6px;
+            background-color: $cat-green;
+            border: none;
+            cursor: pointer;
+            box-shadow: -65px 0 0 62px $cat-green;
+        }
+
+        &::-moz-range-track {
+            min-width: 6px;
+            height: 6px;
+            background-color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        &::-moz-range-progress {
+            min-width: 6px;
+            background-color: $cat-green;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            height: 6px;
+        }
+
+        // &::-webkit-slider-thumb {
+        //     -webkit-appearance: none; /* Override default look */
+        //     appearance: none;
+        //     width: 25px; /* Set a specific slider handle width */
+        //     height: 25px; /* Slider handle height */
+        //     background: #4caf50; /* Green background */
+        //     cursor: pointer; /* Cursor on hover */
+        // }
+
+        // &::-moz-range-thumb {
+        //     width: 25px; /* Set a specific slider handle width */
+        //     height: 25px; /* Slider handle height */
+        //     background: #4caf50; /* Green background */
+        //     cursor: pointer; /* Cursor on hover */
+        // }
+    }
 
     @media (min-width: $tablet-width) and (max-width: 1199px) {
         &__data {
@@ -170,8 +258,9 @@
     }
 
     @media (min-width: $tablet-width) {
-        background: linear-gradient(to bottom, #ffffff 57%, $cat_grey 57%);
-        margin-bottom: 65px;
+        background: linear-gradient(to right, $cat_grey 50%, #eaeaea 50%);
+        background-position: 0 50%;
+        margin-bottom: 0;
         padding-top: 0;
         padding-bottom: 68px;
 
@@ -223,27 +312,8 @@
         }
 
         &__range {
-            margin-top: 13px;
-        }
-
-        &__photo_before {
-            top: 18px;
-            left: 45px;
-            // width: 160px;
-            // overflow: hidden;
-        }
-
-        &__photo_after {
-            margin-left: 51px;
-        }
-
-        &__range-control {
-            width: 422px;
-            height: 2px;
-            background-color: $cat-grey-dark;
-            border: 2px solid $cat-grey-dark;
-            border-radius: 3px;
-
+            margin-top: 5px;
+            box-shadow: none;
             &::before,
             &::after {
                 color: #000000;
@@ -251,13 +321,13 @@
             }
             &::before {
                 content: "Было";
-                left: 0;
-                left: -75px;
+                top: 5px;
+                left: 70px;
             }
             &::after {
                 content: "Стало";
-                right: 0;
-                right: -74px;
+                top: 5px;
+                right: 70px;
             }
 
             &::before,
@@ -276,8 +346,98 @@
                 border-bottom: 1px transparent;
             }
         }
+
+        &__photo_before {
+            top: 18px;
+            left: 16px;
+            width: 677px;
+        }
+
+        &__photo_after {
+            transform: translateX(16px);
+            padding: 0;
+            width: 677px;
+        }
+
+        &__range-control {
+            width: 432px;
+            height: 44px;
+            background-color: transparent;
+            border: none;
+            padding: 0 2px;
+            box-shadow: none;
+            overflow: visible;
+
+            &::-ms-fill-lower,
+            &::-ms-fill-upper {
+                background-color: #dcdcdc;
+                height: 6px;
+                border: 14px transparent;
+                border-radius: 6px;
+            }
+
+            &::-ms-thumb {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                background: radial-gradient($cat-green 4px, #ffffff 4px);
+                border: 1px solid #dcdcdc;
+                cursor: pointer;
+                box-shadow: 0 2px 5px 0 #aaaaaa;
+                margin: 0 2px;
+            }
+
+            &::-ms-track {
+                color: transparent; 
+                border: none;
+                background: none;
+                width: 428px;
+                margin: 0 auto;
+            }
+
+            &::-webkit-slider-thumb {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                background: radial-gradient($cat-green 4px, #ffffff 4px);
+                border: 1px solid #dcdcdc;
+                cursor: pointer;
+                box-shadow: 0 2px 5px 0 #aaaaaa;
+                margin: 0 2px;
+                transform: translate(-2px, -13px);
+            }
+
+            &::-webkit-slider-runnable-track {
+                background-color: #dcdcdc;
+                height: 6px;
+                border: 14px transparent;
+                border-radius: 6px;
+            }
+
+            &::-moz-range-thumb {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                background: radial-gradient($cat-green 4px, #ffffff 4px);
+                border: 1px solid #dcdcdc;
+                cursor: pointer;
+                box-shadow: 0 2px 5px 0 #aaaaaa;
+                margin: 0 2px;
+            }
+
+            &::-moz-range-track {
+                background-color: #dcdcdc;
+                height: 6px;
+                border: 14px transparent;
+                border-radius: 6px;
+            }
+
+            &::-moz-range-progress {
+                background-color: #dcdcdc;
+            }
+        }
     }
-    
+
     @media (min-width: $desktop-width) {
         background: linear-gradient(#ffffff 26%, $cat_grey 26%);
         padding: 0;
@@ -294,7 +454,8 @@
         }
 
         &__photo-container {
-            width: 568px;
+            // width: 568px;
+            width: 677px;
         }
 
         &__header {
@@ -316,6 +477,17 @@
             width: 327px;
             padding: 0;
             margin-bottom: 76px;
+        }
+
+        &__range {
+            margin-top: 45px;
+            margin-left: 109px;
+            &::before {
+                left: 2px;
+            }
+            &::after {
+                right: 2px;
+            }
         }
     }
 }
