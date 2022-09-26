@@ -34,6 +34,6 @@
   "dependencies": {
     "del": "^5.1.0",
     "gulp-html-bem-validator": "^1.0.5",
-    "gulp-w3c-html-validator": "^2.0.1"
+    "gulp-w3c-html-validator": "^5.1.3"
   }
 }
